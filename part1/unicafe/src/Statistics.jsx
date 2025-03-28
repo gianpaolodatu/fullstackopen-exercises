@@ -1,24 +1,22 @@
+import StatisticLine from './StatisticLine'
+
 const Statistics = ({scores}) => {
-
-
     if(scores.totalCount > 0){
         return (
-            <div>
-                <p>good {scores.good}</p>
-                <p>neutral {scores.neutral}</p>
-                <p>bad {scores.bad}</p>
-                <p>all {scores.totalCount}</p>
-                <p>average {scores.average}</p>
-                <p>positive {scores.positive}</p>
-            </div>
+            <table>
+                <StatisticLine text="good" value={scores.good}/>
+                <StatisticLine text="neutral" value={scores.neutral}/>
+                <StatisticLine text="bad" value={scores.bad}/>
+                <StatisticLine text="totalCount" value={scores.totalCount}/>
+                <StatisticLine text="average" value={scores.average}/>
+                <StatisticLine text="positive" value={scores.positive}/>
+            </table>
         )
     } else {
         return (
             <p>No feedback given</p>
         )
     }
-    
-
 }
 
 export default Statistics
